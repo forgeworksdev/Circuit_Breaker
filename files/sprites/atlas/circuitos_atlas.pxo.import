@@ -1,0 +1,21 @@
+[remap]
+
+importer="com.technohacker.pixelorama.animationplayer"
+type="PackedScene"
+uid="uid://ri2t0gd70442"
+path="res://.godot/imported/circuitos_atlas.pxo-30d2e6da97a3a5ed8673cbb2ed50d876.tscn"
+
+[deps]
+
+files=["res://.godot/imported/circuitos_atlas.pxo-30d2e6da97a3a5ed8673cbb2ed50d876.spritesheet.ctex", "res://.godot/imported/circuitos_atlas.pxo-30d2e6da97a3a5ed8673cbb2ed50d876.tscn"]
+
+source_file="res://files/sprites/atlas/circuitos_atlas.pxo"
+dest_files=["res://.godot/imported/circuitos_atlas.pxo-30d2e6da97a3a5ed8673cbb2ed50d876.tscn", "res://.godot/imported/circuitos_atlas.pxo-30d2e6da97a3a5ed8673cbb2ed50d876.spritesheet.ctex", "res://.godot/imported/circuitos_atlas.pxo-30d2e6da97a3a5ed8673cbb2ed50d876.tscn"]
+
+[params]
+
+Sprite2D=false
+scale=Vector2(1, 1)
+Animation=false
+external_save=false
+external_save_path="res://files/sprites/atlas"
