@@ -11,6 +11,9 @@ config_version=5
 [application]
 
 config/name="Circuit Breaker"
+config/description="A game made as an assignment for the Electrical Circuits class of IFG"
+config/version="Indev"
+run/main_scene="uid://b1ie126sbrpq"
 config/features=PackedStringArray("4.4")
 config/icon="uid://g5wildlipq2"
 
@@ -19,6 +22,7 @@ config/icon="uid://g5wildlipq2"
 window/size/viewport_width=288
 window/size/viewport_height=162
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
