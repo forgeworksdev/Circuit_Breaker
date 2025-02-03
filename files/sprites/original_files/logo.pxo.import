@@ -1,0 +1,21 @@
+[remap]
+
+importer="com.technohacker.pixelorama.animationplayer"
+type="PackedScene"
+uid="uid://b6drsj52f75rx"
+path="res://.godot/imported/logo.pxo-e53a1d100d5e50fbac0e00294e7af9f1.tscn"
+
+[deps]
+
+files=["res://.godot/imported/logo.pxo-e53a1d100d5e50fbac0e00294e7af9f1.spritesheet.ctex", "res://.godot/imported/logo.pxo-e53a1d100d5e50fbac0e00294e7af9f1.tscn"]
+
+source_file="res://files/sprites/original_files/logo.pxo"
+dest_files=["res://.godot/imported/logo.pxo-e53a1d100d5e50fbac0e00294e7af9f1.tscn", "res://.godot/imported/logo.pxo-e53a1d100d5e50fbac0e00294e7af9f1.spritesheet.ctex", "res://.godot/imported/logo.pxo-e53a1d100d5e50fbac0e00294e7af9f1.tscn"]
+
+[params]
+
+Sprite2D=false
+scale=Vector2(1, 1)
+Animation=false
+external_save=false
+external_save_path="res://files/sprites/original_files"

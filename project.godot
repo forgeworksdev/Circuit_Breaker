@@ -14,19 +14,27 @@ config/name="Circuit Breaker"
 config/description="A game made as an assignment for the Electrical Circuits class of IFG"
 config/version="Indev"
 run/main_scene="uid://b1ie126sbrpq"
+run/print_header=false
 config/features=PackedStringArray("4.4")
-config/icon="uid://g5wildlipq2"
+config/icon="uid://dmqek0apmsrm5"
+addons/icon_finder/preview_size=42
+
+[autoload]
+
+IconsFonts="*res://addons/icons-fonts/icons_fonts/IconsFonts.gd"
 
 [display]
 
-window/size/viewport_width=288
-window/size/viewport_height=162
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_pixelorama_importer/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_pixelorama_importer/plugin.cfg", "res://addons/icons-fonts/plugin.cfg", "res://addons/plenticons/plugin.cfg", "res://addons/rakugo-nodes/plugin.cfg")
+
+[global_group]
+
+wire_collision=""
 
 [pixelorama]
 
