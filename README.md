@@ -3,14 +3,6 @@
 ### 🏗️ Description  
 Circuit Breaker is a puzzle game centered around fixing and making new circuits using the available components, while avoiding short circuits. It is being developed as an assignment for the class of Electrical Circuits at the IFES Go (AKA IFG)
 
-### 🚀 Features  
-- ✅ Feature 1  
-- ✅ Feature 2  
-- ✅ Feature 3  
-
-### 🎥 Demo (Optional)  
- 
-
 ### 📷 Screenshots  
  ![image](https://github.com/user-attachments/assets/0098eb9b-09f5-48c7-b1be-cfa333238ae8)
 
@@ -20,12 +12,12 @@ Circuit Breaker is a puzzle game centered around fixing and making new circuits 
 
 ### 📥 Cloning the Repository  
 ```sh
-git clone https://github.com/yourusername/project-name.git
-cd project-name
+git clone https://github.com/Max9th/Circuit_Breaker.git
+cd Circuit_Breaker
 ```
 
 ### 🎮 Running the Project in Godot  
-1. Open **Godot 4.3+**  
+1. Open **Godot v4.4 beta2**  
 2. Click **Import Project**  
 3. Select the `project.godot` file in the repository  
 4. Click **Run**  
@@ -33,7 +25,7 @@ cd project-name
 ---
 
 ## 🛠️ Technologies Used  
-- 🖥️ **Godot 4.3** (Engine)  
+- 🖥️ **Godot v4.4 beta2** (Engine)  
 - 🎨 **GDScript** (Scripting)  
 - 📦 **(Any dependencies used, e.g., Godot addons, GDNative, etc.)**  
 
