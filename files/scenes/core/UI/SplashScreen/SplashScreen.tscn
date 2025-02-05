@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=4 uid="uid://btia5f8vojqwx"]
+
+[ext_resource type="Script" uid="uid://5uk3q3nga0rn" path="res://files/scenes/core/UI/SplashScreen/SplashScreenScript.gd" id="1_rv6n1"]
+[ext_resource type="Texture2D" uid="uid://btknvtkl0tyxq" path="res://files/sprites/others/Themaxwellcompany_dark.png" id="3_tlr28"]
+[ext_resource type="Texture2D" uid="uid://j2lev7a16cs8" path="res://files/sprites/others/max9th.png" id="4_owsjn"]
+[ext_resource type="Texture2D" uid="uid://biya536v530o1" path="res://files/sprites/others/IFg.png" id="5_owsjn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tlr28"]
+load_path = "res://.godot/imported/TilesetDark.png-3d9d8760b525728155600a12d1cdf733.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owsjn"]
+texture = SubResource("CompressedTexture2D_tlr28")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lhovx"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_owsjn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owsjn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 30.0
+expand_margin_right = 10.0
+expand_margin_bottom = 30.0
+
+[node name="SplashScreen" type="CanvasLayer" node_paths=PackedStringArray("timers", "screens")]
+script = ExtResource("1_rv6n1")
+interpolation_speed = 0.1
+blank_screen_start = true
+timers = [NodePath("Timers/Timer"), NodePath("Timers/Timer2"), NodePath("Timers/Timer3")]
+screens = [NodePath("SplashScreen1"), NodePath("SplashScreen2"), NodePath("SplashScreen3")]
+path_to_scene_target = "res://files/scenes/core/UI/MainMenu/MainMenu.scn"
+bus_name = "Master"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAEAAAAAAAUAAAACAAIAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAAAAAkAAAACAAAAAAABAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAABAAQAAAACAAEAAAABAAUAAAACAAIAAAABAAYAAAACAAAAAAABAAcAAAACAAAAAAABAAgAAAACAAAAAAABAAkAAAACAAAAAAACAAAAAAACAAAAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAACAAQAAAACAAEAAAACAAUAAAACAAIAAAACAAYAAAACAAAAAAACAAcAAAACAAAAAAACAAgAAAACAAAAAAACAAkAAAACAAAAAAADAAAAAAACAAAAAAADAAEAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAADAAQAAAACAAEAAAADAAUAAAAAAAIAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAAAAAACAAAAAAAEAAEAAAACAAAAAAAEAAIAAAACAAAAAAAEAAMAAAACAAAAAAAEAAQAAAACAAEAAAAEAAUAAAABAAIAAAAEAAYAAAABAAAAAAAEAAcAAAABAAAAAAAEAAgAAAABAAAAAAAEAAkAAAABAAAAAAAFAAAAAAACAAAAAAAFAAEAAAACAAAAAAAFAAIAAAACAAAAAAAFAAMAAAACAAAAAAAFAAQAAAACAAEAAAAFAAUAAAACAAIAAAAFAAYAAAACAAAAAAAFAAcAAAACAAAAAAAFAAgAAAACAAAAAAAFAAkAAAACAAAAAAAGAAAAAAACAAAAAAAGAAEAAAACAAAAAAAGAAIAAAACAAAAAAAGAAMAAAACAAAAAAAGAAQAAAACAAEAAAAGAAUAAAACAAIAAAAGAAYAAAACAAAAAAAGAAcAAAACAAAAAAAGAAgAAAACAAAAAAAGAAkAAAACAAAAAAAHAAAAAAACAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAHAAMAAAACAAAAAAAHAAQAAAACAAEAAAAHAAUAAAACAAIAAAAHAAYAAAACAAAAAAAHAAcAAAACAAAAAAAHAAgAAAACAAAAAAAHAAkAAAACAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAEAAAAIAAUAAAAAAAIAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAAAAAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAQAAAABAAEAAAAJAAUAAAABAAIAAAAJAAYAAAABAAAAAAAJAAcAAAABAAAAAAAJAAgAAAABAAAAAAAJAAkAAAABAAAAAAAKAAAAAAACAAAAAAAKAAEAAAACAAAAAAAKAAIAAAACAAAAAAAKAAMAAAACAAAAAAAKAAQAAAACAAEAAAAKAAUAAAACAAIAAAAKAAYAAAACAAAAAAAKAAcAAAACAAAAAAAKAAgAAAACAAAAAAAKAAkAAAACAAAAAAALAAAAAAACAAAAAAALAAEAAAACAAAAAAALAAIAAAACAAAAAAALAAMAAAACAAAAAAALAAQAAAACAAEAAAALAAUAAAACAAIAAAALAAYAAAACAAAAAAALAAcAAAACAAAAAAALAAgAAAACAAAAAAALAAkAAAACAAAAAAAMAAAAAAACAAAAAAAMAAEAAAACAAAAAAAMAAIAAAACAAAAAAAMAAMAAAACAAAAAAAMAAQAAAACAAEAAAAMAAUAAAACAAIAAAAMAAYAAAACAAAAAAAMAAcAAAACAAAAAAAMAAgAAAACAAAAAAAMAAkAAAACAAAAAAANAAAAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAAAAAANAAQAAAAAAAEAAAANAAUAAAACAAIAAAANAAYAAAACAAAAAAANAAcAAAACAAAAAAANAAgAAAACAAAAAAANAAkAAAACAAAAAAAOAAAAAAABAAAAAAAOAAEAAAABAAAAAAAOAAIAAAABAAAAAAAOAAMAAAABAAAAAAAOAAQAAAABAAEAAAAOAAUAAAACAAIAAAAOAAYAAAACAAAAAAAOAAcAAAACAAAAAAAOAAgAAAACAAAAAAAOAAkAAAACAAAAAAAPAAAAAAACAAAAAAAPAAEAAAACAAAAAAAPAAIAAAACAAAAAAAPAAMAAAACAAAAAAAPAAQAAAACAAEAAAAPAAUAAAACAAIAAAAPAAYAAAACAAAAAAAPAAcAAAACAAAAAAAPAAgAAAACAAAAAAAPAAkAAAACAAAAAAAQAAAAAAACAAAAAAAQAAEAAAACAAAAAAAQAAIAAAACAAAAAAAQAAMAAAACAAAAAAAQAAQAAAACAAEAAAAQAAUAAAACAAIAAAAQAAYAAAACAAAAAAAQAAcAAAACAAAAAAAQAAgAAAACAAAAAAAQAAkAAAACAAAAAAARAAAAAAACAAAAAAARAAEAAAACAAAAAAARAAIAAAACAAAAAAARAAMAAAACAAAAAAARAAQAAAACAAEAAAARAAUAAAACAAIAAAARAAYAAAACAAAAAAARAAcAAAACAAAAAAARAAgAAAACAAAAAAARAAkAAAACAAAAAAAAAAoAAAACAAAAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAAAAAAAAAAEAAoAAAABAAAAAAAFAAoAAAACAAAAAAAGAAoAAAACAAAAAAAHAAoAAAACAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAABAAAAAAAKAAoAAAACAAAAAAALAAoAAAACAAAAAAAMAAoAAAACAAAAAAANAAoAAAACAAAAAAAOAAoAAAACAAAAAAAPAAoAAAACAAAAAAAQAAoAAAACAAAAAAARAAoAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_lhovx")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="Timers"]
+
+[node name="Timer2" type="Timer" parent="Timers"]
+
+[node name="Timer3" type="Timer" parent="Timers"]
+
+[node name="Outros" type="Node" parent="."]
+
+[node name="SplashScreen1" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="CenterContainer" type="CenterContainer" parent="SplashScreen1"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SplashScreen1/CenterContainer"]
+layout_mode = 2
+
+[node name="Max9thLogo" type="TextureRect" parent="SplashScreen1/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_tlr28")
+
+[node name="Max9Th" type="TextureRect" parent="SplashScreen1/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+texture = ExtResource("4_owsjn")
+stretch_mode = 5
+
+[node name="SplashScreen2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="CenterContainer" type="CenterContainer" parent="SplashScreen2"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="PanelContainer" type="PanelContainer" parent="SplashScreen2/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_owsjn")
+
+[node name="IFg" type="TextureRect" parent="SplashScreen2/CenterContainer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("5_owsjn")
+
+[node name="SplashScreen3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

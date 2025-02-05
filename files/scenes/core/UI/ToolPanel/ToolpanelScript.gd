@@ -9,7 +9,7 @@ var can_place_wire: bool = false  # Tracks whether wire placement is allowed
 func _ready() -> void:
 		pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 		pass
 
 func _input(event: InputEvent) -> void:
@@ -20,8 +20,8 @@ func _input(event: InputEvent) -> void:
 
 # Function to add a wire
 func add_wire():
-		var wire = Wire_CB.new()
-		wire.type_of_wire = Wire_CB.WireTypeEnum.NEUTRAL
+		var wire = Wire_cb.new()
+		wire.type_of_wire = Wire_cb.WireTypeEnum.NEUTRAL
 		wire.position = get_global_mouse_position().snapped(Vector2(90, 90))
 		wire.name = "Wire_CB" + str(randi() % 100 + 1)
 

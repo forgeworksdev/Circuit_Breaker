@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqd0xfcbppxul"
-path="res://.godot/imported/slot.png-b4582610cd2316f9f29cca0071ca26bf.ctex"
+uid="uid://j2lev7a16cs8"
+path="res://.godot/imported/max9th.png-503ba1a6387bfbde9a54b1a6a067d2d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://files/sprites/slot.png"
-dest_files=["res://.godot/imported/slot.png-b4582610cd2316f9f29cca0071ca26bf.ctex"]
+source_file="res://files/sprites/others/max9th.png"
+dest_files=["res://.godot/imported/max9th.png-503ba1a6387bfbde9a54b1a6a067d2d8.ctex"]
 
 [params]
 

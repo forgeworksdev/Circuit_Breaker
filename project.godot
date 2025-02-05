@@ -13,15 +13,27 @@ config_version=5
 config/name="Circuit Breaker"
 config/description="A game made as an assignment for the Electrical Circuits class of IFG"
 config/version="Indev"
-run/main_scene="uid://b1ie126sbrpq"
+run/main_scene="uid://btia5f8vojqwx"
 run/print_header=false
 config/features=PackedStringArray("4.4")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="uid://dmqek0apmsrm5"
 addons/icon_finder/preview_size=42
 
 [autoload]
 
 IconsFonts="*res://addons/icons-fonts/icons_fonts/IconsFonts.gd"
+Corec="*res://files/autoloads/corec.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
+gdscript/warnings/unused_variable=0
+gdscript/warnings/unused_local_constant=0
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
 
 [display]
 
@@ -30,7 +42,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_pixelorama_importer/plugin.cfg", "res://addons/icons-fonts/plugin.cfg", "res://addons/plenticons/plugin.cfg", "res://addons/rakugo-nodes/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_pixelorama_importer/plugin.cfg", "res://addons/icons-fonts/plugin.cfg", "res://addons/rakugo-nodes/plugin.cfg")
 
 [global_group]
 
