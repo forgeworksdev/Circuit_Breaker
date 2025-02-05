@@ -16,7 +16,6 @@ var last_switch_time: int = 0
 var fading_out: bool = false
 
 func _ready() -> void:
-	change_panel_colors(Color.BLACK)
 	if audioplayer:
 		audioplayer.play()
 	hide_all_screens()
@@ -75,17 +74,6 @@ func _process(delta: float) -> void:
 		if !fading_out:
 			lerp_transition(screens[times_switched], 1.0)
 
-func change_panel_colors(color: Color):
-	var existing_stylebox = panel.get_theme_stylebox("panel")
-	if existing_stylebox:
-		var new_stylebox = existing_stylebox.duplicate()
-		new_stylebox.bg_color = color
-		panel.add_theme_stylebox_override("panel", new_stylebox)
-
-
-func _on_timer_timeout() -> void:
-	change_panel_colors(Color("10141f"))
-
 @export var manipulate_audio: bool
 @export var bus_name = "sfx_1"
 @export var sound_fade_duration = 9.0
@@ -99,3 +87,7 @@ func fade_out_sfx():
 
 func _set_bus_volume(volume):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), volume)
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("uid://b1ie126sbrpq")

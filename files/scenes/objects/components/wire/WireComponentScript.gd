@@ -6,9 +6,10 @@ extends Line2D
 enum WireTypeEnum {PHASE, NEUTRAL, MIST = -1}
 
 @export var type_of_wire: WireTypeEnum
+@export var can_delete: bool
 
 const MAX_POINTS: int = 3
-var can_drag: bool = false
+@export var can_drag: bool = false
 
 var wire_start_area = Area2D.new()
 var wire_end_area = Area2D.new()
@@ -28,6 +29,12 @@ func _init() -> void:
 	#self.scale = Vector2(.4, .4)
 
 func _ready() -> void:
+	if type_of_wire == Wire_cb.WireTypeEnum.NEUTRAL:
+		self.default_color = Color.BLUE
+	if type_of_wire == Wire_cb.WireTypeEnum.MIST:
+		self.default_color = Color.PURPLE
+	if type_of_wire == Wire_cb.WireTypeEnum.PHASE:
+		self.default_color = Color.RED
 	cooldown_timer.wait_time = 0.5
 	cooldown_timer.one_shot = true
 	cooldown_timer.timeout.connect(_on_cooldown_timeout)
@@ -72,10 +79,10 @@ func _process(_delta: float) -> void:
 		return
 
 	var local_mouse_pos = to_local(get_global_mouse_position().snapped(Vector2(90, 90)))
-	local_mouse_pos = local_mouse_pos
 	set_point_position(get_point_count() - 1, local_mouse_pos)
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and get_point_count() < MAX_POINTS and cooldown_timer.is_stopped():
 		add_point(local_mouse_pos)
+		#cooldown_timer.start()
 
 func update_positions():
 	if points.size() >= 2:
