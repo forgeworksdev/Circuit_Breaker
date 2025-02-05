@@ -1,6 +1,6 @@
 # 🎮 Circuit Breaker
 
-## Warning: This game is still under development. Expect daily commits by the dev team.
+## Warning: This game is still under development and is not in playable state. Expect daily commits by the dev team.
 
 ### 🏗️ Description  
 Circuit Breaker is a puzzle game centered around fixing and making new circuits using the available components, while avoiding short circuits. It is being developed as an assignment for the class of Electrical Circuits at the IFES Go (AKA IFG)
