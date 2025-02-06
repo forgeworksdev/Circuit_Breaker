@@ -1,8 +1,6 @@
 class_name splash_screen_cb
 extends CanvasLayer
 
-@onready var panel: Panel = $Panel
-
 @export var audioplayer: AudioStreamPlayer
 
 @export var interpolation_speed: float = 3.0
