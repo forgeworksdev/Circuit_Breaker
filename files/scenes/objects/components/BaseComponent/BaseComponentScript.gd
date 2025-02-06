@@ -1,9 +1,17 @@
 class_name BaseComponent_cb extends Node2D
 
-@export var can_delete: bool
+enum ComponentTypeEnum {ACTIVE, PASSIVE = -1}
 
-var curr_current: float
-var curr_voltage: float
+@export var type_of_wire: ComponentTypeEnum
+
+@export var can_delete: bool
+@export var is_polarized: bool
+
+var input_current: float = 0
+var input_voltage: float = 0
+
+var output_current: float = 0
+var output_voltage: float = 0
 
 func _ready() -> void:
 	pass
