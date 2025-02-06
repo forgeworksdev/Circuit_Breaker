@@ -54,19 +54,15 @@ func _init() -> void:
 # _ready() Modifica a aparência do fio, adiciona as Area2D, inicia um cooldown
 func _ready() -> void:
 	print(str(self.name) + "was added into the scene tree! (Wire_cb)")
-	if type_of_wire == Wire_cb.WireTypeEnum.NEUTRAL:
-		self.default_color = Color.BLUE
-	if type_of_wire == Wire_cb.WireTypeEnum.MIST:
-		self.default_color = Color.PURPLE
-	if type_of_wire == Wire_cb.WireTypeEnum.PHASE:
-		self.default_color = Color.RED
-
 	match type_of_wire:
 		WireTypeEnum.PHASE:
+			self.default_color = Color.RED
 			print(str(self.name) + "is a Phase wire")
 		WireTypeEnum.NEUTRAL:
+			self.default_color = Color.BLUE
 			print(str(self.name) + "is a Neutral wire")
 		WireTypeEnum.MIST:
+			self.default_color = Color.PURPLE
 			print(str(self.name) + "is a Mist wire (connected to AC)")
 
 	cooldown_timer.wait_time = 0.5
