@@ -22,24 +22,21 @@ extends Line2D
 
 #TIP @onready waits for the node to enter the scene tree before defining the variable, which avoids referencing an unexistent node.
 
-#Enums
+# Enums
 enum WireTypeEnum {PHASE, NEUTRAL, MIST = -1}
 
-#exports
+# Exports
 @export var type_of_wire: WireTypeEnum
 @export var can_delete: bool = true
 @export var can_drag: bool = false
 
-#Consts
+# Consts
 const MAX_POINTS: int = 3
 
-#vars
-
-var input_current: float = 0
-var input_voltage: float = 0
-
-var output_current: float = 0
-var output_voltage: float = 0
+# Vars
+var current: float = 0
+var voltage: float = 0
+var connected_wires: Array[Wire_cb] = []
 
 # _init() modifica Line2D (base de Wire_cb) assim que ele é instanciado. Só deve-se usar essa função para modificar traços que são constantes.
 func _init() -> void:
@@ -127,23 +124,66 @@ func update_positions():
 #...checks if two nodes are siblings.... ig?
 func are_siblings(node_a, node_b) -> bool:
 	return node_a.get_parent() == node_b.get_parent()
+
+func set_voltage(new_voltage: float):
+	if voltage != new_voltage:
+		voltage = new_voltage
+		for connected_wire in connected_wires:
+			connected_wire.set_voltage(new_voltage)
+
+func set_current(new_current: float):
+	if current != new_current:
+		current = new_current
+
+func get_voltage():
+	return voltage
+
+func get_current():
+	return current
+
 #endregion
 
 #region Signals
 
+func sync_values():
+	pass
+
 #DANGER IN DEVELOPMENT
 func wire_start_area_entered(area: Area2D):
 	if !are_siblings(wire_start_area, area):
-		#area.get_parent().output_voltage = self.input_voltage
-		print("INDEV!")
-
-func wire_middle_area_entered(area: Area2D):
-	if !are_siblings(wire_middle_area, area):
-		print("INDEV!")
+		if area.get_parent() is Wire_cb:
+			var target_wire: Wire_cb = area.get_parent()
+			if not connected_wires.has(target_wire):
+				# Connect both ways
+				connected_wires.append(target_wire)
+				target_wire.connected_wires.append(self)
+				# Connect to voltage change signals
+				#target_wire.connect("voltage_changed", _on_voltage_changed)
+				connect("voltage_changed", Callable(target_wire, "_on_voltage_changed"))
+				# Sync voltage
+				if target_wire.voltage != voltage:
+						set_voltage(target_wire.voltage)
+				print("Connected to wire. Voltage: ", voltage)
+		#elif area.get_parent().has_method("get_voltage"):
+			#self.set_voltage(other_node.get_voltage())
+			#print("Connected to component, voltage: ", self.voltage)
 
 func wire_end_area_entered(area: Area2D):
 	if !are_siblings(wire_end_area, area):
-		#area.get_parent().input_voltage = self.output_voltage
+		var other_node = area.get_parent()
+		if other_node is Wire_cb:
+			var target_wire: Wire_cb = other_node
+			if not connected_wires.has(target_wire):
+				connected_wires.append(target_wire)
+				target_wire.connected_wires.append(self)
+			self.set_voltage(target_wire.get_voltage())
+			print("Wire end connected to wire, voltage set to: ", self.voltage)
+		#elif area.get_parent().has_method("get_voltage"):
+			#self.set_voltage(other_node.get_voltage())
+			#print("Connected to component, voltage: ", self.voltage)
+
+func wire_middle_area_entered(area: Area2D):
+	if !are_siblings(wire_middle_area, area):
 		print("INDEV!")
 
 func _on_cooldown_timeout() -> void:

@@ -1,7 +1,8 @@
 extends BaseComponent_cb
 
+#Exports
+@export var is_on: bool
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 

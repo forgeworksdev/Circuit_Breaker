@@ -17,6 +17,12 @@ enum PSUTypeEnum {
 ##Defines the type of power supply
 @export var type_of_PSU: PSUTypeEnum
 
+@export var can_delete: bool
+
+@export var input_area: Area2D
+@export var output_area: Area2D
+@export var main_area: Area2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

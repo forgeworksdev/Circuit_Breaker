@@ -14,6 +14,10 @@ enum ComponentTypeEnum {
 ##Defines the type of component
 @export var type_of_comp: ComponentTypeEnum
 
+@export var resistance: bool
+@export var max_current: float
+@export var max_voltage: float
+
 ##Defines if the component can be erased with the delete tool
 @export var can_delete: bool
 
@@ -23,6 +27,8 @@ enum ComponentTypeEnum {
 @export var input_area: Area2D
 @export var output_area: Area2D
 @export var main_area: Area2D
+
+var is_burnt: bool
 
 #Vars
 
@@ -36,4 +42,21 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	pass
+
+#func wire_start_area_entered(area: Area2D):
+	#if !are_siblings(wire_start_area, area):
+		##area.get_parent().output_voltage = self.input_voltage
+		#print("INDEV!")
+#
+#func wire_middle_area_entered(area: Area2D):
+	#if !are_siblings(wire_middle_area, area):
+		#print("INDEV!")
+#
+#func wire_end_area_entered(area: Area2D):
+	#if !are_siblings(wire_end_area, area):
+		##area.get_parent().input_voltage = self.output_voltage
+		#print("INDEV!")
+
+func calculate_values():
 	pass
