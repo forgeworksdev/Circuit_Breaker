@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://3gn565r6hae0"]
 
-[ext_resource type="Script" uid="uid://crw68ndkf1r1q" path="res://files/scenes/objects/Tools/DeleteTool/DeleteToolScript.gd" id="1_06khj"]
+[ext_resource type="Script" uid="uid://crw68ndkf1r1q" path="res://files/scenes/Tools/DeleteTool/DeleteToolScript.gd" id="1_06khj"]
 [ext_resource type="Texture2D" uid="uid://umwwsm43pb23" path="res://files/sprites/others/icons/tool-eraser-symbolic.png" id="2_06khj"]
 
 [sub_resource type="Shader" id="Shader_ul1g7"]

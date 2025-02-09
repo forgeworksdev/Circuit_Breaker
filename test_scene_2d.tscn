@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://djh6xgo1xqdoq"]
 
-[ext_resource type="PackedScene" uid="uid://3gn565r6hae0" path="res://files/scenes/objects/Tools/DeleteTool/DeleteTool.tscn" id="1_t4gsu"]
-[ext_resource type="Script" uid="uid://deuf0537dv7wi" path="res://files/scenes/objects/components/BaseComponent/BaseComponentScript.gd" id="3_qaqau"]
+[ext_resource type="PackedScene" uid="uid://3gn565r6hae0" path="res://files/scenes/Tools/DeleteTool/DeleteTool.tscn" id="1_t4gsu"]
+[ext_resource type="Script" uid="uid://deuf0537dv7wi" path="res://files/scenes/components/BaseComponent/BaseComponent_script.gd" id="3_qaqau"]
 [ext_resource type="Texture2D" uid="uid://b66wowglfge7a" path="res://files/sprites/exported/base_comp.png" id="4_4paqi"]
 
 [sub_resource type="GDScript" id="GDScript_y32ns"]
