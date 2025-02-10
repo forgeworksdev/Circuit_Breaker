@@ -14,9 +14,9 @@ enum ComponentTypeEnum {
 ##Defines the type of component
 @export var type_of_comp: ComponentTypeEnum
 
-@export var resistance: bool
-@export var max_current: float
-@export var max_voltage: float
+var resistance: bool
+var max_current: float
+var max_voltage: float
 
 ##Defines if the component can be erased with the delete tool
 @export var can_delete: bool
