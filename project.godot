@@ -44,6 +44,20 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/godot_pixelorama_importer/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://files/audio/": "red",
+"res://files/autoloads/": "orange",
+"res://files/fonts/": "yellow",
+"res://files/resources/": "green",
+"res://files/scenes/": "teal",
+"res://files/scenes/Tools/": "green",
+"res://files/scenes/components/": "red",
+"res://files/scenes/core/": "orange",
+"res://files/sprites/": "purple"
+}
+
 [global_group]
 
 wire_collision=""

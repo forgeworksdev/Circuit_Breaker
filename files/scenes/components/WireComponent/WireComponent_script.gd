@@ -1,14 +1,15 @@
 class_name Wire_cb
 extends Line2D
 
-#Exports
-@export var snap_to_grid: bool
-@export var grid_size: Vector2
+#Exports (should be exports
+
 
 #Vars
-var can_drag: bool = false
 
-const MAX_POINTS: int = 2
+var snap_to_grid: bool = true
+var grid_size: Vector2 = Vector2(16, 16)
+
+var can_drag: bool = false
 
 var _voltage: float = 0.0
 var voltage: float:
@@ -38,6 +39,9 @@ var middle_area_collision := CollisionShape2D.new()
 
 var wire_end_area :=  Area2D.new()
 var end_area_collision := CollisionShape2D.new()
+
+#Consts
+const MAX_POINTS: int = 2
 
 func _init() -> void:
 	self.begin_cap_mode = Line2D.LINE_CAP_BOX
@@ -116,17 +120,15 @@ func are_siblings(node_a, node_b) -> bool:
 	return node_a.get_parent() == node_b.get_parent()
 
 func wire_start_area_entered(area: Area2D):
-	if !can_drag:
-		if !are_siblings(area, wire_start_area):
-			var other_node := area.get_parent()
-			if other_node not in connected_wires:
-				connected_wires.append(other_node)
-				print("Connected a wire")
+	connect_components(area)
 
 func wire_middle_area_entered(area: Area2D):
 	pass
 
 func wire_end_area_entered(area: Area2D):
+	connect_components(area)
+
+func connect_components(area: Area2D):
 	if !can_drag:
 		if !are_siblings(area, wire_end_area):
 			#and area.get_child(0).shape == CircleShape2D:

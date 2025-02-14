@@ -1,10 +1,10 @@
-extends BaseComponent_cb
+@icon("res://files/sprites/exported/breaker.png") extends BaseComponent_cb
 
 #Exports
 @export var is_on: bool
 
 func _ready() -> void:
-	pass # Replace with function body.
+	type_of_comp = ComponentTypeEnum.PASSIVE
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

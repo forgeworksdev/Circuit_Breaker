@@ -1,14 +1,26 @@
-extends PanelContainer
+extends Node2D
+#Onreadys
+@onready var vfx: ColorRect = $vfx
 
 #Vars
 var can_place_wire: bool
+
+#Exports
+@export var enabled: bool
+
 @export var where_to_place_wire: Node
 
 func _ready() -> void:
 	pass
 
+var phase_speed: int = 5
 func _process(delta: float) -> void:
-	pass
+	if enabled:
+		self.position = get_global_mouse_position()
+		var material = vfx.material
+		if material is ShaderMaterial:
+			var phase = material.get_shader_parameter("phase")
+			material.set_shader_parameter("phase", phase + delta * phase_speed)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and can_place_wire == true:
@@ -25,11 +37,3 @@ func add_wire():
 
 func _on_add_wire_button_pressed() -> void:
 	can_place_wire = true
-
-
-func _on_del_wire_button_pressed() -> void:
-	can_place_wire = false
-
-
-func _on_move_wire_button_pressed() -> void:
-	can_place_wire = false

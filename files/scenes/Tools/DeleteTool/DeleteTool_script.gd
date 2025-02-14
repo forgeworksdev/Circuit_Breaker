@@ -1,4 +1,4 @@
-extends Node2D
+class_name DeleteTool_cb extends Node2D
 
 @export var enabled: bool
 @onready var vfx: ColorRect = $vfx
