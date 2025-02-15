@@ -1,11 +1,11 @@
 class_name Wire_cb
 extends Line2D
 
-#Exports (should be exports
+#Enums
 
+#Exports
 
 #Vars
-
 var snap_to_grid: bool = true
 var grid_size: Vector2 = Vector2(16, 16)
 
@@ -43,6 +43,9 @@ var end_area_collision := CollisionShape2D.new()
 #Consts
 const MAX_POINTS: int = 2
 
+#Signals
+signal was_placed
+
 func _init() -> void:
 	self.begin_cap_mode = Line2D.LINE_CAP_BOX
 	self.end_cap_mode = Line2D.LINE_CAP_BOX
@@ -70,6 +73,7 @@ func _ready() -> void:
 	wire_end_area.connect("area_entered", wire_end_area_entered)
 
 	await get_tree().create_timer(.2).timeout
+
 	can_drag = true
 
 func _process(delta: float) -> void:
@@ -84,6 +88,7 @@ func _process(delta: float) -> void:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and get_point_count():
 			set_point_position(get_point_count() -1, local_mouse_pos)
 			can_drag = false
+			was_placed.emit()
 
 func update_collisionshape_positions():
 	if points.size() >= 2:

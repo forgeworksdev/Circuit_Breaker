@@ -6,9 +6,9 @@
 @export var tool_destination_node: Node
 
 #Vars
-var AddTool = preload("res://files/scenes/Tools/AddTool/AddTool.scn")
-var DeleteTool = preload("res://files/scenes/Tools/DeleteTool/DeleteTool.scn")
-var MoveTool = preload("res://files/scenes/Tools/MoveTool/MoveTool.scn")
+var AddTool = preload("res://files/scenes/core/UI/ToolPanel/Tools/AddTool/AddTool.scn")
+var DeleteTool = preload("res://files/scenes/core/UI/ToolPanel/Tools/DeleteTool/DeleteTool.scn")
+var MoveTool = preload("res://files/scenes/core/UI/ToolPanel/Tools/MoveTool/MoveTool.scn")
 var can_place_wire: bool
 
 func _ready() -> void:

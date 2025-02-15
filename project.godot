@@ -52,9 +52,9 @@ folder_colors={
 "res://files/fonts/": "yellow",
 "res://files/resources/": "green",
 "res://files/scenes/": "teal",
-"res://files/scenes/Tools/": "green",
 "res://files/scenes/components/": "red",
 "res://files/scenes/core/": "orange",
+"res://files/scenes/core/UI/ToolPanel/Tools/": "green",
 "res://files/sprites/": "purple"
 }
 
