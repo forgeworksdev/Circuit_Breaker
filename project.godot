@@ -72,3 +72,12 @@ default_animation_external_save_path=""
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/default_filters/anisotropic_filtering_level=0
+textures/decals/filter=0
+textures/light_projectors/filter=0
+rendering_device/light_projectors/filter=0
+rendering_device/decals/filter=0
+rendering_device/default_filters/anisotropic_filtering_level=0
+rendering_device/webp_compression/compression_method=2
+rendering_device/lossless_compression/force_png=false
+rendering_device/canvas_textures/default_texture_filter=0
