@@ -42,7 +42,7 @@ var input_voltage: float = 0
 
 var output_current: float = 0
 
-var _output_voltage
+var _output_voltage: float
 var output_voltage: float = 0:
 	set(new_voltage):
 		_output_voltage = new_voltage

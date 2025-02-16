@@ -83,10 +83,10 @@ func _process(delta: float) -> void:
 	#if not can_drag :
 		#return
 	if can_drag:
-		var local_mouse_pos = to_local(get_global_mouse_position().snapped(grid_size))
-		set_point_position(get_point_count() - 1, local_mouse_pos)
+		var local_mouse_pos = to_local(get_global_mouse_position())
+		set_point_position(get_point_count() - 1, local_mouse_pos.snapped(grid_size))
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and get_point_count():
-			set_point_position(get_point_count() -1, local_mouse_pos)
+			set_point_position(get_point_count() -1, local_mouse_pos.snapped(grid_size))
 			can_drag = false
 			was_placed.emit()
 
@@ -94,8 +94,8 @@ func update_collisionshape_positions():
 	if points.size() >= 2:
 		wire_start_area.global_position = to_global(get_point_position(0))
 		wire_end_area.global_position = to_global(get_point_position(get_point_count() - 1))
-		middle_area_collision.shape.a = (get_point_position(0))
-		middle_area_collision.shape.b = (get_point_position(get_point_count() - 1))
+		middle_area_collision.shape.a = get_point_position(0)
+		middle_area_collision.shape.b = get_point_position(get_point_count() - 1)
 
 func get_voltage():
 	#print(str(voltage))
