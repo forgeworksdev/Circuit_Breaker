@@ -44,6 +44,8 @@ var _output_current: float = 0.0
 var output_current: float:
 	set(new_current):
 		_output_current = new_current
+		if new_current > max_current:
+			is_burnt = true
 		sync_values()
 	get:
 		return _output_current
@@ -52,6 +54,8 @@ var _output_voltage: float
 var output_voltage: float = 0:
 	set(new_voltage):
 		_output_voltage = new_voltage
+		if new_voltage > max_voltage:
+			is_burnt = true
 		sync_values()
 	get:
 		return _output_voltage
@@ -100,13 +104,13 @@ func get_current() -> float:
 	##print(str(current))
 	#return current
 #
-#func set_voltage(new_voltage: float = 0) -> void:
-	#if voltage != new_voltage:
-		#voltage = new_voltage
+func set_voltage(new_voltage: float = 0) -> void:
+	if self.input_voltage != new_voltage:
+		input_voltage = new_voltage
 #
-#func set_current(new_current: float = 0):
-	#if current != new_current:
-		#current = new_current
+func set_current(new_current: float = 0):
+	if self.input_current != new_current:
+		self.input_current = new_current
 
 func calculate_values(voltage: float, current: float, resistance: float):
 	pass

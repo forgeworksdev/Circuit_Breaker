@@ -25,7 +25,7 @@ addons/icon_finder/preview_size=42
 [autoload]
 
 IconsFonts="*res://addons/icons-fonts/icons_fonts/IconsFonts.gd"
-Corec="*res://files/autoloads/corec.gd"
+Corec="*res://files/autoloads/core_c.gd"
 
 [debug]
 
