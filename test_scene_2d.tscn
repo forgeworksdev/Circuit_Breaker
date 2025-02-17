@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://djh6xgo1xqdoq"]
 
-[ext_resource type="PackedScene" uid="uid://c4q7ntgvo3mv8" path="res://files/scenes/core/UI/ToolPanel/Tools/AddTool/AddTool.scn" id="1_j6pnx"]
+[ext_resource type="PackedScene" uid="uid://c4q7ntgvo3mv8" path="res://files/scenes/core/UI/Tools/AddTool/AddTool.scn" id="1_j6pnx"]
 
 [sub_resource type="GDScript" id="GDScript_y32ns"]
 resource_name = "node2d"

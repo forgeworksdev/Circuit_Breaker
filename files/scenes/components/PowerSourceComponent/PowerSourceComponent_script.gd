@@ -15,6 +15,8 @@ enum PSCTypeEnum {
 ##Defines the type of power supply
 @export var type_of_PSU: PSCTypeEnum
 
+
+
 func _ready() -> void:
 	type_of_comp = ComponentTypeEnum.ACTIVE
 
@@ -28,8 +30,5 @@ func _ready() -> void:
 		PSCTypeEnum.ST:
 			pass
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	super ._process(delta)

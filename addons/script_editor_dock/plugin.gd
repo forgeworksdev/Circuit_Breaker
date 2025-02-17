@@ -19,7 +19,7 @@ func _enter_tree():
 
 	control.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	control.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	control.name = "ScD"
+	control.name = "Script Editor Dock"
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_LEFT_BR, control)
 
 	var parent: TabContainer = control.get_parent()

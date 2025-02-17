@@ -37,7 +37,7 @@ void fragment() {
 
 [resource]
 shader = SubResource("Shader_s4ypv")
-shader_parameter/width = 4
+shader_parameter/width = 1
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/flickering_speed = 0.0
 shader_parameter/minimal_flickering_alpha = 0.0

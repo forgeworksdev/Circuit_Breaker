@@ -6,8 +6,10 @@ extends Line2D
 #Exports
 
 #Vars
+var can_delete: bool = true
 var snap_to_grid: bool = true
 var grid_size: Vector2 = Vector2(16, 16)
+#var grid_size: Vector2 = Vector2(4, 4)
 
 var can_drag: bool = false
 var is_placed: bool = false
@@ -28,7 +30,7 @@ var current: float:
 	get:
 		return _current
 
-var is_connected_to_PSU_minus: bool
+var is_connected_to_PSU: bool
 
 var connected_wires: Array = []
 
@@ -52,6 +54,7 @@ func _init() -> void:
 	self.end_cap_mode = Line2D.LINE_CAP_BOX
 	self.joint_mode = Line2D.LINE_JOINT_ROUND
 	self.width = 4
+	#self.scale = Vector2(.25, .25)
 	self.add_point(Vector2.ZERO)
 	self.add_point(Vector2(16,16))
 
@@ -80,7 +83,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	update_collisionshape_positions()
-	#sync_values()
+	sync_values()
 	if not can_drag:
 		return
 
@@ -113,8 +116,14 @@ func set_current(new_current: float = 0):
 
 func sync_values() -> void:
 	for wire in connected_wires:
-		wire.set_voltage(self.voltage)
-		wire.set_current(self.current)
+		#wire.sync_values()
+		if self.is_connected_to_PSU:
+			break
+		else:
+			self.set_voltage(wire.get_voltage())
+			#print("a")
+		#wire.set_voltage(self.voltage)
+		#wire.set_current(self.current)
 		#print("Sync-ed wire voltage")
 
 func are_siblings(node_a, node_b) -> bool:
@@ -124,14 +133,12 @@ func are_siblings(node_a, node_b) -> bool:
 	return node_a.get_parent() == node_b.get_parent()
 
 func wire_start_area_entered(area: Area2D) -> void:
-	print("A")
 	connect_components(area)
 
 func wire_middle_area_entered(area: Area2D) -> void:
 	pass
 
 func wire_end_area_entered(area: Area2D) -> void:
-	print("A")
 	connect_components(area)
 
 func wire_start_area_exited(area: Area2D) -> void:
@@ -144,7 +151,6 @@ func wire_end_area_exited(area: Area2D) -> void:
 	disconnect_components(area)
 
 func disconnect_components(area: Area2D):
-	print("a")
 	if area.get_parent() in connected_wires:
 		connected_wires.erase(area.get_parent())
 

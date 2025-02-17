@@ -47,6 +47,8 @@ enabled=PackedStringArray("res://addons/godot_pixelorama_importer/plugin.cfg", "
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
+"res://files/": "red",
 "res://files/audio/": "red",
 "res://files/autoloads/": "orange",
 "res://files/fonts/": "yellow",
@@ -54,8 +56,9 @@ folder_colors={
 "res://files/scenes/": "teal",
 "res://files/scenes/components/": "red",
 "res://files/scenes/core/": "orange",
-"res://files/scenes/core/UI/ToolPanel/Tools/": "green",
-"res://files/sprites/": "purple"
+"res://files/scenes/core/UI/Tools/": "green",
+"res://files/sprites/": "purple",
+"res://files/sprites/original_files/": "purple"
 }
 
 [global_group]
