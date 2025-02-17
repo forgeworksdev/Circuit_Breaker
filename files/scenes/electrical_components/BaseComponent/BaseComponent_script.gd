@@ -6,7 +6,6 @@ class_name BaseComponent_cb extends Node2D
 enum ComponentTypeEnum {
 	ACTIVE, ##Generates voltage and current to achieve the expected result.
 	PASSIVE ##Modifies current and voltage to achieve the expected result
-	= -1
 }
 
 #Exports

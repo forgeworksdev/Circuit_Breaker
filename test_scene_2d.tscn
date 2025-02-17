@@ -164,5 +164,5 @@ func is_in_cooldown(event: InputEvent):
 script = SubResource("GDScript_y32ns")
 
 [node name="AddTool" parent="." node_paths=PackedStringArray("where_to_place_wire") instance=ExtResource("1_j6pnx")]
-enabled = true
 where_to_place_wire = NodePath("..")
+enabled = true

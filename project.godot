@@ -54,9 +54,9 @@ folder_colors={
 "res://files/fonts/": "yellow",
 "res://files/resources/": "green",
 "res://files/scenes/": "teal",
-"res://files/scenes/components/": "red",
 "res://files/scenes/core/": "orange",
 "res://files/scenes/core/UI/Tools/": "green",
+"res://files/scenes/electrical_components/": "red",
 "res://files/sprites/": "purple",
 "res://files/sprites/original_files/": "purple"
 }

@@ -18,7 +18,7 @@ var _voltage: float = 0.0
 var voltage: float:
 	set(new_voltage):
 		_voltage = new_voltage
-		sync_values()
+		#sync_values()
 	get:
 		return _voltage
 
