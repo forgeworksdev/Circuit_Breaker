@@ -1,5 +1,11 @@
 @icon("res://files/sprites/others/icons/processor-symbolic.png") extends CanvasLayer #PanelContainer
 
+
+
+#DANGER DEPRECATE THIS SCRIPT ASAP!!! REPLACE WITH BUTTON MANAGER COMPONENTS
+
+
+
 #Exports
 @export var wire_destination_node: Node
 
