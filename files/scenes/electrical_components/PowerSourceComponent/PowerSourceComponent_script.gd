@@ -1,4 +1,4 @@
-@icon("res://files/sprites/exported/PS_CC.png") class_name PowerSourceComponent_cb extends BaseComponent_cb
+@icon("res://files/sprites/exported/PS_CC.png") class_name PowerSourceComponent_cb extends Component_cb
 
 #Enums
 
@@ -29,6 +29,6 @@ func _ready() -> void:
 			pass
 		PSCTypeEnum.ST:
 			pass
-
-func _process(delta: float) -> void:
-	super ._process(delta)
+#
+#func _process(delta: float) -> void:
+	#super ._process(delta)

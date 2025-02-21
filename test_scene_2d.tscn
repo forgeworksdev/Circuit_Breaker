@@ -1,168 +1,30 @@
 [gd_scene load_steps=3 format=3 uid="uid://djh6xgo1xqdoq"]
 
 [ext_resource type="PackedScene" uid="uid://c4q7ntgvo3mv8" path="res://files/scenes/core/UI/Tools/AddTool/AddTool.scn" id="1_j6pnx"]
-
-[sub_resource type="GDScript" id="GDScript_y32ns"]
-resource_name = "node2d"
-script/source = "extends Node2D
-
-#func _process(_delta: float) -> void:
-	#pass
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventKey and event.pressed and event.keycode == KEY_W:
-		#add_wire()
-#
-#var times_spawned = 0
-#func add_wire():
-	#times_spawned += 1
-	#var wire = Wire_cb.new()
-	##wire.type_of_wire = Wire_cb.WireTypeEnum.NEUTRAL
-	#wire.position = get_global_mouse_position().snapped(Vector2(90,90))
-	#wire.can_drag = true
-	#wire.name = \"Wire_CB\" + str(times_spawned)
-	#add_child(wire)
-
-#var _line:Line2D
-#var _segments:Node2D
-#var _loops:Node2D
-#
-#func _ready() -> void:
-		#_line = Line2D.new()
-		#_line.name = \"_line\"
-		#add_child(_line)
-		#_segments = Node2D.new()
-		#_segments.name = \"_segments\"
-		#add_child(_segments)
-		#_loops = Node2D.new()
-		#_loops.name = \"_loops\"
-		#add_child(_loops)
-#
-#func _physics_process(_delta:float) -> void:
-		#if Input.is_action_pressed(\"left_click\"):
-				#add_position(get_global_mouse_position())
-		#if Input.is_action_just_released(\"left_click\"):
-				#total_purge()
-#
-#var _points:PackedVector2Array = PackedVector2Array()
-#var _max_points := 30
-#var _max_distance := 20
-#
-#func add_position(pos:Vector2) -> void:
-		#var point_count := _points.size()
-		#if point_count == 0:
-				#_points.append(pos)
-				#_points.append(pos)
-				#add_segment(pos, pos)
-		#elif point_count == 1:
-				#_points.append(pos)
-				#add_segment(_points[-2], pos)
-		#elif point_count > _max_points:
-				#purge(point_count - _max_points)
-		#else:
-				#if _points[-2].distance_to(pos) > _max_distance:
-						#_points.append(pos)
-						#add_segment(_points[-2], pos)
-				#else:
-						#_points[-1] = pos
-						#change_segment(_points[-2], pos)
-#
-		#_line.points = _points
-		#process_loop()
-#
-#var _width := 5
-#
-#func add_segment(start:Vector2, end:Vector2) -> void:
-		#var points := rotated_rectangle_points(start, end, _width)
-		#var segment := Area2D.new()
-		#var collision := create_collision_polygon(points)
-		#segment.add_child(collision)
-		#_segments.add_child(segment)
-#
-#func change_segment(start:Vector2, end:Vector2) -> void:
-		#var points := rotated_rectangle_points(start, end, _width)
-		#var segment := (_segments.get_child(_segments.get_child_count() - 1) as Area2D)
-		#var collision := (segment.get_child(0) as CollisionPolygon2D)
-		#collision.set_polygon(points)
-#
-#func rotated_rectangle_points(start:Vector2, end:Vector2, width:float) -> Array:
-		#var diff := end - start
-		#var normal := diff.rotated(TAU/4).normalized()
-		#var offset := normal * width * 0.5
-		#return [start + offset, start - offset, end - offset, end + offset]
-#
-#func create_collision_polygon(points:Array) -> CollisionPolygon2D:
-		#var result := CollisionPolygon2D.new()
-		#result.set_polygon(points)
-		#return result
-#
-#func total_purge() -> void:
-		#purge(_points.size())
-		#purge_loops()
-#
-#func purge(index:int) -> void:
-		#var segments := _segments.get_children()
-		#for _index in range(0, index):
-				#if _points.size() > 0:
-						#_points.remove_at(0)
-				#if segments.size() > 0:
-						#_segments.remove_child(segments[0])
-						#segments[0].queue_free()
-						#segments.remove_at(0)
-#
-		#_line.points = _points
-#
-#func purge_loops() -> void:
-		#for loop in _loops.get_children():
-				#if is_instance_valid(loop):
-						#loop.queue_free()
-#
-#func process_loop() -> void:
-		#var segments := _segments.get_children()
-		#for index in range(segments.size() - 1, 0, -1):
-				#var segment:Area2D = segments[index]
-				#var candidates := segment.get_overlapping_areas()
-				#for candidate in candidates:
-						#var candidate_index := segments.find(candidate)
-						#if candidate_index == -1:
-								#continue
-#
-						#if abs(candidate_index - index) > 2:
-								#push_loop(candidate_index, index)
-								#purge(index)
-								#return
-#
-#func push_loop(first_index:int, second_index:int) -> void:
-		#purge_loops()
-		#var loop := Area2D.new()
-		#var points := _points
-		#points.resize(second_index)
-		#for point_index in first_index + 1:
-				#points.remove_at(0)
-#
-		#var collision := create_collision_polygon(points)
-		#loop.add_child(collision)
-		#_loops.add_child(loop)
-# Variable to track time of the last click
-# Variable to track time of the last click
-var last_click_time: float = -1.0
-var click_cooldown: float = 0.2  # 0.2 seconds cooldown
-
-# Input handler for mouse events
-func _input(event: InputEvent) -> void:
-	pass
-func is_in_cooldown(event: InputEvent):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-			var current_time = Time.get_unix_time_from_system()
-			if last_click_time == -1.0 or current_time - last_click_time >= click_cooldown:
-					last_click_time = current_time
-					return false
-			else:
-					return true
-"
+[ext_resource type="PackedScene" uid="uid://cv8hlyhdphkt" path="res://files/scenes/electrical_components/Component/Component.scn" id="2_t4gsu"]
 
 [node name="test" type="Node2D"]
-script = SubResource("GDScript_y32ns")
 
-[node name="AddTool" parent="." node_paths=PackedStringArray("where_to_place_wire") instance=ExtResource("1_j6pnx")]
-where_to_place_wire = NodePath("..")
-enabled = true
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="BaseComponent" parent="Node2D" instance=ExtResource("2_t4gsu")]
+scale = Vector2(4, 4)
+
+[node name="BaseComponent2" parent="Node2D" instance=ExtResource("2_t4gsu")]
+position = Vector2(414, 151)
+scale = Vector2(4, 4)
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="AddTool" parent="Node2D2" node_paths=PackedStringArray("where_to_place_wire") instance=ExtResource("1_j6pnx")]
+where_to_place_wire = NodePath("../..")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 124.0
+offset_top = 36.0
+offset_right = 164.0
+offset_bottom = 59.0
+text = "What just happened:
+The wire got output point from component one, stored it inside 
+itself and then component 2 got that value and set it as its own input.
+The code that was used follows:"
