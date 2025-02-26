@@ -1,3 +1,6 @@
+
+![logo](https://github.com/user-attachments/assets/54176eea-e996-4ea7-9e0e-cd6c5b0e99da)
+
 # 🎮 Circuit Breaker
 
 ## Warning: This game is still under development and is not in playable state. Expect daily commits by the dev team.
