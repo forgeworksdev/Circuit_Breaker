@@ -24,7 +24,7 @@ cd Circuit_Breaker
 ### 🎮 Running the Project in Godot  
 1. Open **Godot v4.4 beta2**  
 2. Click **Import Project**  
-3. Select the `project.godot` file in the repository  
+3. Select the `project.godot` file in the repository  e 
 4. Click **Run**  
 
 ---
@@ -44,3 +44,13 @@ cd Circuit_Breaker
 5. **Open a Pull Request**  
 
 ---
+
+## Credits 🫂
+
+Made with love by 
+
+- Max9th
+- Sider
+- Deltong
+
+at the Federal Institute of Education, Science and Tech of Goiás.
