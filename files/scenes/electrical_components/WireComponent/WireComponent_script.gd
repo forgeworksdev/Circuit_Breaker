@@ -106,42 +106,52 @@ func wire_end_area_entered(area: Area2D) -> void:
 	connect_components(area)
 
 func wire_start_area_exited(area: Area2D) -> void:
-	if area.get_parent() is Wire_cb or area.get_parent() is Component_cb:
-		disconnect_components(area)
+	disconnect_components(area)
 
 func wire_middle_area_exited(area: Area2D) -> void:
 	pass
 
 func wire_end_area_exited(area: Area2D) -> void:
-	if area.get_parent() is Wire_cb or area.get_parent() is Component_cb:
-		disconnect_components(area)
+	disconnect_components(area)
+
+#var connected_wires: Array[Wire_cb] = []
+#var is_connected: bool = false
+func connect_components(area: Area2D):
+	pass
+
+func disconnect_components(area:Area2D):
+	pass
 
 #func connect_components(area: Area2D) -> void:
-	#if (area.get_parent() is Component_cb or area.get_parent() is Wire_cb):
-		#if !are_siblings(area, wire_end_area) :
-			#var other_node := area.get_parent()
-			#self.output_point = other_node.output_point
+	#if not (area.get_parent() is Component_cb or area.get_parent() is Wire_cb) or are_siblings(area, wire_end_area):
+		#return
+	#var other_node := area.get_parent()
+	#if other_node is Wire_cb:
+		#if is_connected:
+			#output_point = other_node.output_point
+			#for wire in connected_wires:
+				#wire.output_point = other_node.output_point
+		##if other_node.output_point == 0:
+		#other_node.output_point = output_point
+		#is_connected = true
+		##elif other_node.output_point != 0:
+			##output_point = other_node.output_point
+		#if other_node not in connected_wires:
+			#connected_wires.append(other_node)
 
-func connect_components(area: Area2D) -> void:
-	if (area.get_parent() is Component_cb or area.get_parent() is Wire_cb):
-		if !are_siblings(area, wire_end_area) :
-			var other_node := area.get_parent()
-			if other_node is Wire_cb:
-				other_node.output_point = output_point
-			#if other_node is Component_cb:
-				#other_node.input_point = output_point
-
-func disconnect_components(area: Area2D) -> void:
-	var parent = area.get_parent()
-	if parent == null:
-		print("Warning: Area has no parent. Cannot disconnect.")
-		return
-	if area.get_parent() is Wire_cb or area.get_parent() is Component_cb:
-		var has_remaining_overlaps := false
-		for overlapping_area in wire_end_area.get_overlapping_areas() + wire_start_area.get_overlapping_areas():
-			if overlapping_area.get_parent() == parent:
-				has_remaining_overlaps = true
-				break
-		if not has_remaining_overlaps:
-			print("Disconnecting component: ", parent.name)
-			output_point = 0
+#func disconnect_components(area: Area2D) -> void:
+	#var parent = area.get_parent()
+	#if parent == null:
+		#print("Warning: Area has no parent. Cannot disconnect.")
+		#return
+	#if parent is Wire_cb or area.get_parent() is Component_cb:
+		#var has_remaining_overlaps := false
+		#for overlapping_area in wire_end_area.get_overlapping_areas() + wire_start_area.get_overlapping_areas():
+			#if overlapping_area.get_parent() == parent:
+				#has_remaining_overlaps = true
+				#break
+		#if not has_remaining_overlaps:
+			##print("Disconnecting component: ", parent.name)
+			#output_point = 0
+			#if parent in connected_wires:
+				#connected_wires.erase(parent)

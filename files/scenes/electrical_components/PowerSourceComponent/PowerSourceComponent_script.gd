@@ -15,10 +15,9 @@ enum PSCTypeEnum {
 ##Defines the type of power supply
 @export var type_of_PSU: PSCTypeEnum
 
-
-
 func _ready() -> void:
-	type_of_comp = ComponentTypeEnum.ACTIVE
+	super()
+	input_point = randi_range(1, 1000)
 
 	match PSCTypeEnum:
 		PSCTypeEnum.AC:

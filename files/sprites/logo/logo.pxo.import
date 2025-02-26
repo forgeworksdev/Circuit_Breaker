@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://b6drsj52f75rx"
+path="res://.godot/imported/logo.pxo-6682e3e760b298f2d0219749e7f8dc7f.ctex"
+
+[deps]
+
+source_file="res://files/sprites/logo/logo.pxo"
+dest_files=["res://.godot/imported/logo.pxo-6682e3e760b298f2d0219749e7f8dc7f.ctex"]
+
+[params]
+

@@ -1,0 +1,21 @@
+[remap]
+
+importer="com.technohacker.pixelorama.animationplayer"
+type="PackedScene"
+uid="uid://b4md1yuwjqdyr"
+path="res://.godot/imported/background_new_unfinished.png.pxo-37e689b286f1c85e7f188a132dd9456f.tscn"
+
+[deps]
+
+files=["res://.godot/imported/background_new_unfinished.png.pxo-37e689b286f1c85e7f188a132dd9456f.spritesheet.ctex", "res://.godot/imported/background_new_unfinished.png.pxo-37e689b286f1c85e7f188a132dd9456f.tscn"]
+
+source_file="res://files/sprites/exported/background_new_unfinished.png.pxo"
+dest_files=["res://.godot/imported/background_new_unfinished.png.pxo-37e689b286f1c85e7f188a132dd9456f.tscn", "res://.godot/imported/background_new_unfinished.png.pxo-37e689b286f1c85e7f188a132dd9456f.spritesheet.ctex", "res://.godot/imported/background_new_unfinished.png.pxo-37e689b286f1c85e7f188a132dd9456f.tscn"]
+
+[params]
+
+Sprite2D=false
+scale=Vector2(1, 1)
+Animation=false
+external_save=false
+external_save_path="res://files/sprites/exported"

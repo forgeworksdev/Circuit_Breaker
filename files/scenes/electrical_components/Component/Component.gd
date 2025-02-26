@@ -1,23 +1,9 @@
 @icon("res://files/sprites/exported/base_comp.png")
-class_name Component_cb extends Node2D
+class_name Component_cb
+extends Node2D
 
-#Enums
-
-#enum ComponentTypeEnum {
-	#ACTIVE, ##Generates voltage and current to achieve the expected result.
-	#PASSIVE ##Modifies current and voltage to achieve the expected result
-#}
-
-#Exports
-
-###Defines the type of component
-#@export var type_of_comp: ComponentTypeEnum
-
-##Defines if the component is being powered
-@export var is_powered: bool
-##Defines if the component can be erased with the delete tool
+# Exports
 @export var can_delete: bool
-##Defines if the component is polarized
 @export var is_polarized: bool
 
 @export_category("Values")
@@ -30,83 +16,106 @@ class_name Component_cb extends Node2D
 @export var output_area: Area2D
 @export var main_area: Area2D
 
-var is_burnt: bool
+# Vars
+var input_point: int = 0
+var output_point: int = 0  # Will be assigned a unique value
 
-#Vars
+var voltage: float = 0.0  # Will be assigned by another component
+var current: float = 0.0  # Will be assigned by another component
+var power: float = 0.0    # Will be assigned by another component
 
-var input_point:int = 0
-var output_point: int = randi_range(1, 1000)
+var is_burnt: bool = false
 
-var voltage: float = 0.0
-
-var current: float = 0.0
-
-var is_connected_to_PSU: bool = false
+# Track connected components and wires
+var connected_inputs: Array = []  # Components/wires connected to input_area
+var connected_outputs: Array = [] # Components/wires connected to output_area
 
 func _ready() -> void:
-	input_area.connect("area_entered", input_area_entered)
-	input_area.connect("area_exited", input_area_exited)
-	output_area.connect("area_entered", output_area_entered)
-	output_area.connect("area_exited", output_area_exited)
+	# Assign a unique output_point
+	output_point = Corec.get_unique_output_point()
 
-#func _process(delta: float) -> void:
-	#sync_values()
+	# Connect signals for collision areas
+	input_area.connect("area_entered", Callable(self, "_on_input_area_entered"))
+	input_area.connect("area_exited", Callable(self, "_on_input_area_exited"))
+	output_area.connect("area_entered", Callable(self, "_on_output_area_entered"))
+	output_area.connect("area_exited", Callable(self, "_on_output_area_exited"))
 
-func input_area_entered(area: Area2D):
-	connect_input_components(area)
-
-func output_area_entered(area: Area2D):
-	connect_output_components(area)
-
-func input_area_exited(area: Area2D):
-	disconnect_components(area)
-
-func output_area_exited(area: Area2D):
-	disconnect_components(area)
-
-func get_voltage() -> float:
-	return voltage
-
-func get_current() -> float:
-	return current
-
-func set_voltage(new_voltage: float = 0) -> void:
-	if self.input_voltage != new_voltage:
-		voltage = new_voltage
-#
-func set_current(new_current: float = 0):
-	if self.input_current != new_current:
-		current = new_current
-
-func connect_input_components(area: Area2D) -> void:
-	if (area.get_parent() is Component_cb or area.get_parent() is Wire_cb):
+# Handle input area entered
+func _on_input_area_entered(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent is Component_cb or parent is Wire_cb:
 		if !are_siblings(area, output_area):
-			var other_node := area.get_parent()
-			input_point = other_node.output_point
+			connect_input(parent)
 
-func connect_output_components(area: Area2D):
-	if area.get_parent() is Component_cb or area.get_parent() is Wire_cb:
-		if !are_siblings(area, output_area):
-			var other_node := area.get_parent()
-			if other_node is Wire_cb:
-				other_node.output_point = output_point
-			if other_node is Component_cb:
-				other_node.input_point = output_point
+# Handle output area entered
+func _on_output_area_entered(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent is Component_cb or parent is Wire_cb:
+		if !are_siblings(area, input_area):
+			connect_output(parent)
 
+# Handle input area exited
+func _on_input_area_exited(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent is Component_cb or parent is Wire_cb:
+		disconnect_input(parent)
 
+# Handle output area exited
+func _on_output_area_exited(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent is Component_cb or parent is Wire_cb:
+		disconnect_output(parent)
+
+# Connect input
+func connect_input(node: Node) -> void:
+	if node == self:  # Prevent self-connections
+		return
+	if node not in connected_inputs:
+		connected_inputs.append(node)
+		update_input_point()
+
+# Connect output
+func connect_output(node: Node) -> void:
+	if node == self:  # Prevent self-connections
+		return
+	if node not in connected_outputs:
+		connected_outputs.append(node)
+		if node is Wire_cb:
+			node.output_point = output_point
+		elif node is Component_cb:
+			node.input_point = output_point
+
+# Disconnect input
+func disconnect_input(node: Node) -> void:
+	if node in connected_inputs:
+		connected_inputs.erase(node)
+		update_input_point()
+
+# Disconnect output
+func disconnect_output(node: Node) -> void:
+	if node in connected_outputs:
+		connected_outputs.erase(node)
+
+# Update input_point based on connected inputs
+func update_input_point() -> void:
+	var new_input_point = 0
+	for input_node in connected_inputs:
+		if input_node is Wire_cb:
+			new_input_point = max(new_input_point, input_node.output_point)  # Take the highest value
+		elif input_node is Component_cb:
+			new_input_point = max(new_input_point, input_node.output_point)  # Take the highest value
+	if new_input_point != input_point:
+		input_point = new_input_point
+		propagate_input_change()
+
+# Propagate input changes to connected outputs
+func propagate_input_change() -> void:
+	for output_node in connected_outputs:
+		if output_node is Wire_cb:
+			output_node.output_point = input_point
+		elif output_node is Component_cb:
+			output_node.input_point = input_point
+
+# Check if two nodes are siblings
 func are_siblings(node_a, node_b) -> bool:
 	return node_a.get_parent() == node_b.get_parent()
-
-func disconnect_components(area: Area2D) -> void:
-	var parent = area.get_parent()
-	if parent == null:
-		return
-	if area.get_parent() is Wire_cb or area.get_parent() is Component_cb:
-		var has_remaining_overlaps := false
-		for overlapping_area in input_area.get_overlapping_areas() + output_area.get_overlapping_areas():
-			if overlapping_area.get_parent() == parent:
-				has_remaining_overlaps = true
-				break
-		if not has_remaining_overlaps:
-			print("Disconnecting component: ", parent.name)
-			input_point = 0

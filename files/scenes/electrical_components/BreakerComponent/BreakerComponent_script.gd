@@ -4,7 +4,7 @@
 @export var is_on: bool
 
 func _ready() -> void:
-	type_of_comp = ComponentTypeEnum.PASSIVE
+	super()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
