@@ -11,6 +11,8 @@ Circuit Breaker is a puzzle game centered around fixing and making new circuits 
 ### 📷 Screenshots  
  ![image](https://github.com/user-attachments/assets/0098eb9b-09f5-48c7-b1be-cfa333238ae8)
 
+Mockup of a half-wave rectifier.
+
 ---
 
 ## 🔧 Installation & Setup  
