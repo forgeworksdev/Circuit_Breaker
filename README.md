@@ -1,12 +1,17 @@
+
+![logo](https://github.com/user-attachments/assets/54176eea-e996-4ea7-9e0e-cd6c5b0e99da)
+
 # 🎮 Circuit Breaker
 
 ## Warning: This game is still under development and is not in playable state. Expect daily commits by the dev team.
 
 ### 🏗️ Description  
-Circuit Breaker is a puzzle game centered around fixing and making new circuits using the available components, while avoiding short circuits. It is being developed as an assignment for the class of Electrical Circuits at the IFES Go (AKA IFG)
+Circuit Breaker is a puzzle game centered around fixing and making new circuits using the available components, while avoiding short circuits. It is being developed as an assignment for the class of Electrical Circuits at the IFES GO (AKA IFG)
 
 ### 📷 Screenshots  
  ![image](https://github.com/user-attachments/assets/0098eb9b-09f5-48c7-b1be-cfa333238ae8)
+
+Mockup of a half-wave rectifier.
 
 ---
 
@@ -21,15 +26,15 @@ cd Circuit_Breaker
 ### 🎮 Running the Project in Godot  
 1. Open **Godot v4.4 beta2**  
 2. Click **Import Project**  
-3. Select the `project.godot` file in the repository  
+3. Select the `project.godot` file in the repository  e 
 4. Click **Run**  
 
 ---
 
 ## 🛠️ Technologies Used  
-- 🖥️ **Godot v4.4 beta2** (Engine)  
+- 🖥️ **Godot v4.4 beta3** (Engine)  
 - 🎨 **GDScript** (Scripting)  
-- 📦 **(Any dependencies used, e.g., Godot addons, GDNative, etc.)**  
+- 📦 **Godot Pixelorama Importer addon (Fork by Daniel Chabrowski, original by Technohacker)**
 
 ---
 
@@ -41,3 +46,13 @@ cd Circuit_Breaker
 5. **Open a Pull Request**  
 
 ---
+
+## Credits 🫂
+
+Made with love by 
+
+- Max9th
+- Sider
+- Deltong
+
+at the Federal Institute of Education, Science and Tech of Goiás.
