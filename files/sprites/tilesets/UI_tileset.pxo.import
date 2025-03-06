@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://bl0umaufud6ig"
+path="res://.godot/imported/UI_tileset.pxo-8f68cf3ef70cca23bbde57506d11a98c.ctex"
+
+[deps]
+
+source_file="res://files/sprites/tilesets/UI_tileset.pxo"
+dest_files=["res://.godot/imported/UI_tileset.pxo-8f68cf3ef70cca23bbde57506d11a98c.ctex"]
+
+[params]
+

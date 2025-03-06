@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://das10mivsn605"
+path="res://.godot/imported/transistor.pxo-793c132b6c940a3a8cfa56aab7091173.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/transistor.pxo"
+dest_files=["res://.godot/imported/transistor.pxo-793c132b6c940a3a8cfa56aab7091173.ctex"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://b1r8bj1my0h61"
+path="res://.godot/imported/machine_panel.pxo-8f941329affdfacd208d2a94752940f5.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/factory_machines/machine_panel.pxo"
+dest_files=["res://.godot/imported/machine_panel.pxo-8f941329affdfacd208d2a94752940f5.ctex"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://st73vheiiv25"
+path="res://.godot/imported/LED_on.pxo-52c40b4de74cf4f1b63a0fe574bfb066.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/LED/LED_on.pxo"
+dest_files=["res://.godot/imported/LED_on.pxo-52c40b4de74cf4f1b63a0fe574bfb066.ctex"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://bxmj2ml5b8v44"
+path="res://.godot/imported/base_comp.pxo-81057fe1a3915284ca74f0f82c9cdc3a.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/base_comp.pxo"
+dest_files=["res://.godot/imported/base_comp.pxo-81057fe1a3915284ca74f0f82c9cdc3a.ctex"]
+
+[params]
+

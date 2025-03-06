@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://bt0q7qj0ak7yi"
+path="res://.godot/imported/transformer.pxo-bfdac38b5e5ce5034d2764e6cb0eaece.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/transformer.pxo"
+dest_files=["res://.godot/imported/transformer.pxo-bfdac38b5e5ce5034d2764e6cb0eaece.ctex"]
+
+[params]
+

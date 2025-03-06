@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://co11cvat0lrpf"
+path="res://.godot/imported/resistor.pxo-20795e9f6d754bf89f550eb849946751.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/resistor.pxo"
+dest_files=["res://.godot/imported/resistor.pxo-20795e9f6d754bf89f550eb849946751.ctex"]
+
+[params]
+

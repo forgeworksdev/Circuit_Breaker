@@ -1,11 +1,11 @@
+@icon("uid://c1e2o4hqgg1vu")
 extends Node2D
 
 @export var panels: Array[Area2D]
-@onready var camera_2d: Camera2D = $Content/Camera2D
 
-@onready var engineer_character: CharacterBody2D = $Content/EngineerCharacter
-
-@onready var animation_player: AnimationPlayer = $Content/AnimationPlayer
+@onready var engineer_character: EngineerCharacter = $EngineerCharacter
+@onready var camera_2d: Camera2D = $Content/Others/Camera2D
+@onready var animation_player: AnimationPlayer = $Content/Others/AnimationPlayer
 
 func _ready() -> void:
 	engineer_character.get_node("Camera2D").enabled = false

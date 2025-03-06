@@ -1,4 +1,4 @@
-@icon("res://files/sprites/original_files/diode.pxo") class_name DiodeComponent_cb extends Component_cb
+@icon("uid://c84unudlu4i6n") class_name DiodeComponent_cb extends Component_cb
 
 #Enums
 

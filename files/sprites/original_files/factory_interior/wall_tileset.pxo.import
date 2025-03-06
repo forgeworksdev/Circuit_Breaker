@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://bya8hmyq001wm"
+path="res://.godot/imported/wall_tileset.pxo-a68eb13a9c3b5a32b7c1ac5790e7d8b4.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/factory_interior/wall_tileset.pxo"
+dest_files=["res://.godot/imported/wall_tileset.pxo-a68eb13a9c3b5a32b7c1ac5790e7d8b4.ctex"]
+
+[params]
+

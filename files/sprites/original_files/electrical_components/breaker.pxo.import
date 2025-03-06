@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://c7uuw1ewdvr65"
+path="res://.godot/imported/breaker.pxo-8634eb6a3323dafdec3afa17c39fd2ca.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/breaker.pxo"
+dest_files=["res://.godot/imported/breaker.pxo-8634eb6a3323dafdec3afa17c39fd2ca.ctex"]
+
+[params]
+

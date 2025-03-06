@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://deguw83bvmt4d"
+path="res://.godot/imported/LED_off.pxo-8f819a77bc3cedc1f6694bcbdd87d957.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/LED/LED_off.pxo"
+dest_files=["res://.godot/imported/LED_off.pxo-8f819a77bc3cedc1f6694bcbdd87d957.ctex"]
+
+[params]
+

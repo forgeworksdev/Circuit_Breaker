@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://rglyeqhce8fs"
+path="res://.godot/imported/zener_diode.pxo-fc78480f79308170e696f41b6c0f1959.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/zener_diode.pxo"
+dest_files=["res://.godot/imported/zener_diode.pxo-fc78480f79308170e696f41b6c0f1959.ctex"]
+
+[params]
+

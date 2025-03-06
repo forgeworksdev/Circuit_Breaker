@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://5k3410ujy85t"]
+
+[ext_resource type="Script" uid="uid://f7k27dmxs3b8" path="res://files/scenes/electrical_components/CapacitorComponent/CapacitorComponent.gd" id="1_e36a7"]
+[ext_resource type="Material" uid="uid://qx2c06lp75cs" path="res://files/resources/shader_as_resource/Outline.tres" id="1_jt4nk"]
+[ext_resource type="Texture2D" uid="uid://1wlgp3vu2bip" path="res://files/sprites/original_files/electrical_components/capacitor.pxo" id="2_e36a7"]
+
+[sub_resource type="GDScript" id="GDScript_gudxo"]
+resource_name = "DraggableComponent_script"
+script/source = "extends Node
+
+#Exports
+@export var target: Node2D ##Which object will be made draggable. If not specified, will assume target as parent
+@export var can_drag: bool
+@export var snap_to_grid: bool
+@export var drag_offset: Vector2
+@export var grid_size: Vector2
+@export var interactable_area: Area2D
+@export var scale_factor: float
+#Vars
+var is_dragging: bool = false
+
+func _ready() -> void:
+	if interactable_area:
+		interactable_area.connect(\"input_event\", handle_interactions)
+		#interactable_area.connect(\"mouse_exited\", handle_mouse_exited)
+		#interactable_area.connect(\"input_event\", handle_interactions)
+	else:
+		print(\"Error: No interactable area!\")
+
+func _process(delta: float) -> void:
+	var mouse_pos
+	if scale_factor > 0:
+		mouse_pos = get_parent().get_global_mouse_position() / scale_factor
+	if scale_factor == 0:
+		mouse_pos = get_parent().get_global_mouse_position() / 1
+	var drag_target: Node2D
+
+	if target != null:
+		drag_target = target
+	else:
+		drag_target = get_parent()
+
+	if !is_dragging:
+		return
+	elif drag_target is not Node2D:
+		print(\"Error: Parent is not/does not extend Node2D (does not have a position value)\")
+		return
+	elif !snap_to_grid:
+		drag_target.position = mouse_pos + (drag_offset * 1)
+	else:
+		drag_target.position = mouse_pos.snapped(grid_size) + (drag_offset * 1)
+
+func _input(event: InputEvent) -> void:
+	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		is_dragging = false
+
+func handle_interactions(viewport: Node, event: InputEvent, shape_idx: int):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			is_dragging = event.pressed
+
+func handle_mouse_exited():
+	is_dragging = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgit3"]
+size = Vector2(14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jupof"]
+size = Vector2(4, 1)
+
+[node name="CapacitorComponent" type="Node2D"]
+script = ExtResource("1_e36a7")
+
+[node name="DraggableComponent" type="Node" parent="." node_paths=PackedStringArray("target", "interactable_area")]
+script = SubResource("GDScript_gudxo")
+target = NodePath("..")
+drag_offset = Vector2(-12, -11)
+grid_size = Vector2(16, 16)
+interactable_area = NodePath("../MainArea")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_jt4nk")
+position = Vector2(12, 10)
+texture = ExtResource("2_e36a7")
+
+[node name="MainArea" type="Area2D" parent="."]
+position = Vector2(5, 3)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainArea"]
+position = Vector2(7, 7.5)
+shape = SubResource("RectangleShape2D_hgit3")
+
+[node name="OutputArea" type="Area2D" parent="."]
+position = Vector2(19, 8)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutputArea"]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_jupof")
+
+[node name="InputArea" type="Area2D" parent="."]
+position = Vector2(1, 8)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea"]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_jupof")

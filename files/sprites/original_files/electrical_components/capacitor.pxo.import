@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://1wlgp3vu2bip"
+path="res://.godot/imported/capacitor.pxo-833ce61dad6acb42f4140dc64eb063a8.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/capacitor.pxo"
+dest_files=["res://.godot/imported/capacitor.pxo-833ce61dad6acb42f4140dc64eb063a8.ctex"]
+
+[params]
+

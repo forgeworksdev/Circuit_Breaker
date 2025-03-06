@@ -1,8 +1,6 @@
 class_name Wire_cb
 extends Line2D
 
-
-
 #Enums
 
 #Exports
@@ -75,12 +73,15 @@ func _process(delta: float) -> void:
 		set_point_position(get_point_count() - 1, local_mouse_pos.snapped(grid_size))
 
 func _input(event: InputEvent) -> void:
+
 	var local_mouse_pos = to_local(get_global_mouse_position())
-	if Input.is_action_just_pressed("clicked") and can_drag == true and is_placed == false:
+
+	if Input.is_action_just_pressed("click") and can_drag == true and is_placed == false:
 		set_point_position(get_point_count() - 1, local_mouse_pos.snapped(grid_size))
 		was_placed.emit()
 		can_drag = false
 		is_placed = true
+
 	if event is InputEventKey:
 			if event.keycode == KEY_ESCAPE and event.pressed:
 					can_drag = false
@@ -114,14 +115,15 @@ func wire_middle_area_exited(area: Area2D) -> void:
 func wire_end_area_exited(area: Area2D) -> void:
 	disconnect_components(area)
 
+func connect_components(area):
+	pass
+
+func disconnect_components(area):
+	pass
+
 #var connected_wires: Array[Wire_cb] = []
 #var is_connected: bool = false
-func connect_components(area: Area2D):
-	pass
-
-func disconnect_components(area:Area2D):
-	pass
-
+#
 #func connect_components(area: Area2D) -> void:
 	#if not (area.get_parent() is Component_cb or area.get_parent() is Wire_cb) or are_siblings(area, wire_end_area):
 		#return
@@ -138,7 +140,7 @@ func disconnect_components(area:Area2D):
 			##output_point = other_node.output_point
 		#if other_node not in connected_wires:
 			#connected_wires.append(other_node)
-
+#
 #func disconnect_components(area: Area2D) -> void:
 	#var parent = area.get_parent()
 	#if parent == null:
@@ -151,7 +153,6 @@ func disconnect_components(area:Area2D):
 				#has_remaining_overlaps = true
 				#break
 		#if not has_remaining_overlaps:
-			##print("Disconnecting component: ", parent.name)
 			#output_point = 0
 			#if parent in connected_wires:
 				#connected_wires.erase(parent)

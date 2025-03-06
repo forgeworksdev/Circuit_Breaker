@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://c84unudlu4i6n"
+path="res://.godot/imported/diode.pxo-01a110685485b98ea9cb130ec50b906d.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/electrical_components/diode.pxo"
+dest_files=["res://.godot/imported/diode.pxo-01a110685485b98ea9cb130ec50b906d.ctex"]
+
+[params]
+

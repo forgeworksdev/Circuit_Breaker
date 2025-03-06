@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="CompressedTexture2D"
+uid="uid://ct12ybx13h0av"
+path="res://.godot/imported/floor.pxo-c993f5bae5434401ad03c1f5c779ccbb.ctex"
+
+[deps]
+
+source_file="res://files/sprites/original_files/factory_interior/floor.pxo"
+dest_files=["res://.godot/imported/floor.pxo-c993f5bae5434401ad03c1f5c779ccbb.ctex"]
+
+[params]
+
