@@ -1,0 +1,21 @@
+[remap]
+
+importer="com.technohacker.pixelorama.animationplayer"
+type="PackedScene"
+uid="uid://cbfshal3ovf4u"
+path="res://.godot/imported/tmer.pxo-c4cb15a1c3ea6bec8babc39606431a45.tscn"
+
+[deps]
+
+files=["res://.godot/imported/tmer.pxo-c4cb15a1c3ea6bec8babc39606431a45.spritesheet.ctex", "res://.godot/imported/tmer.pxo-c4cb15a1c3ea6bec8babc39606431a45.tscn"]
+
+source_file="res://files/sprites/original_files/tmer.pxo"
+dest_files=["res://.godot/imported/tmer.pxo-c4cb15a1c3ea6bec8babc39606431a45.tscn", "res://.godot/imported/tmer.pxo-c4cb15a1c3ea6bec8babc39606431a45.spritesheet.ctex", "res://.godot/imported/tmer.pxo-c4cb15a1c3ea6bec8babc39606431a45.tscn"]
+
+[params]
+
+Sprite2D=false
+scale=Vector2(1, 1)
+Animation=false
+external_save=false
+external_save_path="res://files/sprites/original_files"

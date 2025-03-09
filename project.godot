@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Circuit Breaker"
-config/description="A game made as an assignment for the Electrical Circuits class of IFG"
-config/version="Indev"
-run/main_scene="uid://dxmyc3vidxgpi"
+config/description="A game about making circuits!"
+config/version="0.1"
+run/main_scene="uid://b44s1tkp3a8fr"
 run/print_header=false
 config/features=PackedStringArray("4.4")
 boot_splash/show_image=false
@@ -36,6 +36,7 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
+window/energy_saving/keep_screen_on=false
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 

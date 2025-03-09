@@ -1,8 +1,8 @@
 @icon("res://files/sprites/original_files/dialogBox.pxo")
 extends Control
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animated_sprite_2d: AnimatedSprite2D = $OtherComponents/AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $OtherComponents/AnimationPlayer
 
 func _ready() -> void:
 	animated_sprite_2d.play("default")
@@ -16,7 +16,7 @@ func _on_play_button_pressed() -> void:
 	animation_player.play("run_away")
 
 func _on_credits_pressed() -> void:
-	OS.shell_open("http://kenney.nl/")
+	OS.shell_open("https://github.com/Max9th/Circuit_Breaker")
 
 func _on_settings_pressed() -> void:
 	pass

@@ -1,5 +1,7 @@
 @icon("res://files/sprites/others/icons/processor-symbolic.png") class_name UI_cb extends CanvasLayer#PanelContainer
 
+@onready var level_objective_label: Label = $ObjectiveTray/CenterContainer/LevelObjectiveLabel
+
 @export var ComponentContainer: Node
 
 @export_category("Tool references")
@@ -7,15 +9,16 @@
 @export var DelTool: DeleteTool_cb
 @export var MoveTool: MoveTool_cb
 
-@onready var level_objective_label: Label = $ObjectiveTray/CenterContainer/LevelObjectiveLabel
-
 var level: Node
 
+
+
 func _ready() -> void:
-#level_objective_label.text = level.level_objective
-	#await get_tree().create_timer(1).timeout
 	level = get_tree().current_scene
 	level_objective_label.text = level.get_level_objective()
+
+func get_level_objective():
+	return "debug"
 
 #region ToolPanel
 
@@ -33,11 +36,6 @@ func _on_move_tool_button_pressed() -> void:
 
 func _on_cancel_button_pressed() -> void:
 	disable_all_tools()
-	#if ComponentContainer == null:
-		#print("Error: No ComponentContainer")
-	#else:
-		#for child in ComponentContainer.get_children():
-			#child.queue_free()
 
 func _on_clear_button_pressed() -> void:
 	disable_all_tools()
