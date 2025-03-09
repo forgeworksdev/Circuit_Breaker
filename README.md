@@ -24,7 +24,7 @@ cd Circuit_Breaker
 ```
 
 ### 🎮 Running the Project in Godot  
-1. Open **Godot v4.4 beta2**  
+1. Open **Godot v4.4**  
 2. Click **Import Project**  
 3. Select the `project.godot` file in the repository  e 
 4. Click **Run**  
@@ -32,7 +32,7 @@ cd Circuit_Breaker
 ---
 
 ## 🛠️ Technologies Used  
-- 🖥️ **Godot v4.4 beta3** (Engine)  
+- 🖥️ **Godot v4.4** (Engine)  
 - 🎨 **GDScript** (Scripting)  
 - 📦 **Godot Pixelorama Importer addon (Fork by Daniel Chabrowski, original by Technohacker)**
 
