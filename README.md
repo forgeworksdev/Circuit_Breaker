@@ -51,7 +51,7 @@ cd Circuit_Breaker
 
 Made with love by 
 
-- Max9th - Main developer, artist and programmer.
+- ForgeWorks - Main developer, artist and programmer.
 
 -- Former Developers --
   
