@@ -1,7 +1,7 @@
 
 ![logo](https://github.com/user-attachments/assets/54176eea-e996-4ea7-9e0e-cd6c5b0e99da)
 
-# 🎮 Circuit Breaker
+# 🎮 Circuit Breaker 🎮
 
 ## Warning: This game is still under development and is not in playable state. Expect daily commits by the dev team.
 
@@ -51,8 +51,11 @@ cd Circuit_Breaker
 
 Made with love by 
 
-- Max9th
-- Sider
-- Deltong
+- Max9th - Main developer, artist and programmer.
+
+-- Former Developers --
+  
+- Sider - Former song composer.
+- Deltong -  Former general assistant.
 
 at the Federal Institute of Education, Science and Tech of Goiás.
