@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://5k3410ujy85t"]
+[gd_scene load_steps=6 format=3 uid="uid://5k3410ujy85t"]
 
-[ext_resource type="Script" uid="uid://f7k27dmxs3b8" path="res://files/scenes/electrical_components/CapacitorComponent/CapacitorComponent.gd" id="1_e36a7"]
 [ext_resource type="Material" uid="uid://qx2c06lp75cs" path="res://files/resources/shader_as_resource/Outline.tres" id="1_jt4nk"]
 [ext_resource type="Texture2D" uid="uid://1wlgp3vu2bip" path="res://files/sprites/original_files/electrical_components/capacitor.pxo" id="2_e36a7"]
 
@@ -70,7 +69,6 @@ size = Vector2(14, 15)
 size = Vector2(4, 1)
 
 [node name="CapacitorComponent" type="Node2D"]
-script = ExtResource("1_e36a7")
 
 [node name="DraggableComponent" type="Node" parent="." node_paths=PackedStringArray("target", "interactable_area")]
 script = SubResource("GDScript_gudxo")

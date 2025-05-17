@@ -19,7 +19,7 @@ config/features=PackedStringArray("4.4")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="uid://dmqek0apmsrm5"
+config/icon="res://icon.png"
 addons/icon_finder/preview_size=42
 
 [autoload]

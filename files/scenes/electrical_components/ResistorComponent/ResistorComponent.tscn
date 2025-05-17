@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbt5do0twj1k8"]
+[gd_scene load_steps=5 format=3 uid="uid://dbt5do0twj1k8"]
 
-[ext_resource type="Script" uid="uid://b4fsxi4dyv28v" path="res://files/scenes/electrical_components/ResistorComponent/ResistorComponent_script.gd" id="1_c05rq"]
 [ext_resource type="Texture2D" uid="uid://co11cvat0lrpf" path="res://files/sprites/original_files/electrical_components/resistor.pxo" id="2_db7jr"]
 
 [sub_resource type="GDScript" id="GDScript_db7jr"]
@@ -69,7 +68,6 @@ size = Vector2(12, 12)
 size = Vector2(3, 1)
 
 [node name="ResistorComponent" type="Node2D"]
-script = ExtResource("1_c05rq")
 
 [node name="DraggableComponent" type="Node" parent="." node_paths=PackedStringArray("target", "interactable_area")]
 script = SubResource("GDScript_db7jr")

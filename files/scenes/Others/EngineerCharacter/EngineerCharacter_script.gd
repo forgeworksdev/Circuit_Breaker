@@ -1,6 +1,6 @@
 @icon("res://files/sprites/original_files/electrical_eng_ref.pxo")
 extends CharacterBody2D
-class_name EngineerCharacter
+class_name EngineerMC_cb
 
 @export var sprite: AnimatedSprite2D
 

@@ -15,7 +15,7 @@ var level: Node
 
 func _ready() -> void:
 	level = get_tree().current_scene
-	level_objective_label.text = level.get_level_objective()
+#	level_objective_label.text = level.get_level_objective()
 
 func get_level_objective():
 	return "debug"

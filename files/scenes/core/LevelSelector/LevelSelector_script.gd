@@ -3,12 +3,11 @@ extends Node2D
 
 @export var panels: Array[Area2D]
 
-@onready var engineer_character: EngineerCharacter = $EngineerCharacter
+@onready var engineer_character: EngineerMC_cb = $EngineerCharacter
 @onready var camera_2d: Camera2D = $Content/Others/Camera2D
 @onready var animation_player: AnimationPlayer = $Content/Others/AnimationPlayer
 
 func _ready() -> void:
-	engineer_character.get_node("Camera2D").enabled = false
 	engineer_character.get_node("AnimatedSprite2D").play("Sprint")
 	engineer_character.get_node("AnimatedSprite2D").flip_h = true
 	engineer_character.enabled = false
@@ -29,8 +28,7 @@ func _on_body_exited():
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	engineer_character.get_node("Camera2D").enabled = true
-	camera_2d.enabled = false
+	engineer_character.get_node("Camera2D").make_current()
 	engineer_character.enabled = true
 
 

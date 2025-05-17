@@ -11,12 +11,12 @@ func _ready() -> void:
 	dialog_box.modulate.a = 0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is EngineerCharacter:
+	if body is EngineerMC_cb:
 		self.is_interactable = true
 		fade_dialog_in(dialog_box)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body is EngineerCharacter:
+	if body is EngineerMC_cb:
 		self.is_interactable = false
 		fade_dialog_out(dialog_box)
 

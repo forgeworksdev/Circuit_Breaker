@@ -9,9 +9,37 @@ enum Colorthemes {
 	Light
 }
 
+class IDGenerator:
+	var _next_id: int = 1  # Start from 1, reserve 0 for special cases
+
+	func get_id():
+		return _next_id
+
+	func get_next_id() -> int:
+		var id = _next_id
+		_next_id += 1
+		return id
+
+	func reset_id():
+		_next_id = 1
+
+	func generate_uuid() -> String:
+		var uuid = ""
+		for i in range(16):
+			uuid += "%02x" % (randi() % 256)
+			if i in [3, 5, 7, 9]:
+				uuid += "-"
+		return uuid
+
+
+	func reset():
+		_next_id = 1
+
 var selected_theme: Colorthemes
 
 var global_output_point_counter: int = 1
+
+
 
 func get_unique_output_point() -> int:
 	var unique_point = global_output_point_counter

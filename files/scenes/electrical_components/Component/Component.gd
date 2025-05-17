@@ -1,4 +1,4 @@
-@icon("res://files/sprites/exported/base_comp.png")
+#@icon("res://files/sprites/exported/base_comp.png")
 class_name Component_cb extends Node2D
 
 #Enums
