@@ -1,5 +1,5 @@
 
-![logo](https://github.com/user-attachments/assets/54176eea-e996-4ea7-9e0e-cd6c5b0e99da)
+<img width="610" height="470" alt="logo_exported" src="https://github.com/user-attachments/assets/2dfb72e8-77f1-4576-9e7b-d25ccb940adc" />
 
 # 🎮 Circuit Breaker 🎮
 
