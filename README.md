@@ -32,7 +32,7 @@ cd Circuit_Breaker
 ---
 
 ## 🛠️ Technologies Used  
-- 🖥️ **Godot v4.4** (Engine)  
+- 🖥️ **Godot v4.5** (Engine)  
 - 🎨 **GDScript** (Scripting)  
 - 📦 **Godot Pixelorama Importer addon (Fork by Daniel Chabrowski, original by Technohacker)**
 
